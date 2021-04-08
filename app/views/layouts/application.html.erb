@@ -5,12 +5,39 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body> 
+    <div id="header" class="navbar navbar-expand-lg dark bg-dark">
+      <div class="container-fluid ">
+        <ul class='"navbar-nav me-auto mb-2 mb-lg-0"'>
+          <li class='nav-item' ><%= link_to 'Tumblr', root_path%></li>
+          <li class="nav-item"><%= link_to "Posts", root_path %></li>
+          <li class='nav-item'>About</li>
+        </ul>
+        <div class="button d-flex">      
+          <!--<p class="sign_in"> User Login</p>-->
+          <button class='button'> <%= link_to "Make Post", new_post_path %></button>
+          <button class="button">Log Out</button>
+        </div>
+      </div>
+    </div>
+   
+
+
+     
+      <div id="main_content">
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg,class: "alert") %>
+      <% end %>
     <%= yield %>
+        </div> 
+     
+    
   </body>
 </html>
