@@ -2,7 +2,9 @@
 
 
 <p>
-    create at <%= time_ago_in_words(@post.created_at) %> ago
+    create at <%= time_ago_in_words(@post.created_at) %> ago |
+    <%= link_to 'edit', edit_post_path(@post) %> | 
+    <%= link_to 'Delete' , post_path(@post), method: :delete, data: { confirm:  'are you sure?' } %>
 </p>
 
 <p>
