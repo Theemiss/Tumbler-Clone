@@ -1,0 +1,7 @@
+<div>
+    <div>
+        <h4><%= comment.name %></h4>
+        <p><%= comment.body %></p>
+    </div>
+    <p><%= link_to  'Delete', [comment.post , comment], method: :delete %></p>
+</div>
