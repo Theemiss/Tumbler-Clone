@@ -1,10 +1,11 @@
 <h1 class="title>"<%= @post.title %></h1>
 
 
-    create at <%= time_ago_in_words(@post.created_at) %> ago |
+    create at <%= time_ago_in_words(@post.created_at) %> ago 
+    <% if user_signed_in? %>|
     <%= link_to 'edit', edit_post_path(@post) %> | 
     <%= link_to 'Destroy',@post ,method: :delete %>
-
+    <% end %>
 <p>
     <%= @post.body %>
 
@@ -13,6 +14,5 @@
 <div>
     <h2><%= @post.comments.count %> comments</h2>
     <%= render @post.comments %>
-    <h3>join duscution</h3>
     <%= render "comments/form" %>
 </div>

@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <%= form_for ([@post, @post.comments.build]) do |f| %>
 <div>
 <%= f.label :name %><br>
@@ -12,3 +13,4 @@
 
 
 <% end %>
+<%end%>

@@ -3,5 +3,7 @@
         <h4><%= comment.name %></h4>
         <p><%= comment.body %></p>
     </div>
+    <% if  user_signed_in? %>
     <p><%= link_to  'Delete', [comment.post , comment], method: :delete %></p>
+    <%end %>
 </div>
